@@ -1,21 +1,10 @@
-# CI-Synapse-AML-HandsOn
+# CI + Synapse + AML HandsOn
 A Hands On Tutorial on using Dynamics 365 Customer Insights, Azure Synapse and Azure Machine Learning together
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><p><img src="media0/media/image1.png" style="width:0.80645in;height:0.80645in" />Hands-On Lab on</p>
-<p>Dynamics 365 Customer Insights,<br />
-Azure Synapse and Azure Machine Learning</p></th>
-<th></th>
-</tr>
-</thead>
-</table>
 
 # <img src="media0/media/image2.jpeg" style="width:8.61458in;height:1.76667in" />Introduction
 
+<p><img src="media0/media/image1.png" style="width:0.80645in;height:0.80645in" />
+</p>
 In this hands on series, we, as a property rental agency, are attempting
 to improve our customer experience and increase the total life time
 value of our customers. While we have a pretty impressive property
