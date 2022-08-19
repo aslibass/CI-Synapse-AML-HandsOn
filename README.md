@@ -74,7 +74,7 @@ This hands on is divided into three parts.
 <td><strong>2 hours</strong></td>
 </tr>
 <tr class="odd">
-<td><strong>[Module 4 - Putting it all together](https://github.com/aslibass/CI-Synapse-AML-HandsOn/blob/main/Module4.md)</strong></td>
+<td><strong><a href="#\https://github.com/aslibass/CI-Synapse-AML-HandsOn/blob/main/Module4.md">Module 4 - Putting it all together</a></strong></td>
 <td><strong>2 hours</strong></td>
 </tr>
 <tr class="even">
