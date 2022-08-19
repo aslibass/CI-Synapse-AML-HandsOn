@@ -6,26 +6,12 @@ A Hands On Tutorial on using Dynamics 365 Customer Insights, Azure Synapse and A
 </colgroup>
 <thead>
 <tr class="header">
-<th><table>
-<colgroup>
-<col style="width: 90%" />
-<col style="width: 9%" />
-</colgroup>
-<thead>
-<tr class="header">
 <th><p><img src="media0/media/image1.png" style="width:0.80645in;height:0.80645in" />Hands-On Lab on</p>
 <p>Dynamics 365 Customer Insights,<br />
 Azure Synapse and Azure Machine Learning</p></th>
 <th></th>
 </tr>
 </thead>
-<tbody>
-</tbody>
-</table></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
 </table>
 
 # <img src="media0/media/image2.jpeg" style="width:8.61458in;height:1.76667in" />Introduction
@@ -99,7 +85,7 @@ This hands on is divided into three parts.
 <td><strong>2 hours</strong></td>
 </tr>
 <tr class="odd">
-<td><strong>Module 4 - Putting it all together</strong></td>
+<td><strong>[Module 4 - Putting it all together](https://github.com/aslibass/CI-Synapse-AML-HandsOn/blob/main/Module4.md)</strong></td>
 <td><strong>2 hours</strong></td>
 </tr>
 <tr class="even">
