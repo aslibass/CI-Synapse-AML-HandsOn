@@ -48,6 +48,9 @@ This hands on is divided into three parts.
     Marketing.
 
 
+![Architecture](./media0/media/Ci%20synapse%20aml.png)
+
+
 | Module | Topic | Duration |
 |--------|--------------------------------|----|
 |[Module 1](./Module1.md) |  Using Dynamics 365 Customer Insights to Cleanse & Enrich a set of Customer Records | 3 hours |
