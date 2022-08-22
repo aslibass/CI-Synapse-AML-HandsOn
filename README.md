@@ -1,10 +1,13 @@
 # CI + Synapse + AML HandsOn
+
+![MTC Header](./media0/media/image2.jpeg)
+
 A Hands On Tutorial on using Dynamics 365 Customer Insights, Azure Synapse and Azure Machine Learning together
 
-# <img src="media0/media/image2.jpeg" style="width:8.61458in;height:1.76667in" />Introduction
+![Hands On Logo](./media0/media/image1.png)
 
-<p><img src="media0/media/image1.png" style="width:0.80645in;height:0.80645in" />
-</p>
+## Introduction
+
 In this hands on series, we, as a property rental agency, are attempting
 to improve our customer experience and increase the total life time
 value of our customers. While we have a pretty impressive property
@@ -44,46 +47,12 @@ This hands on is divided into three parts.
     insight, ready to used with a marketing engine like Dynamics 365
     Marketing.
 
-<table>
-<colgroup>
-<col style="width: 90%" />
-<col style="width: 9%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><p><strong>Module 1 - Dynamics 365 Customer Insights</strong></p>
-<ul>
-<li><p>Using CI to Cleanse &amp; Enrich a set of Customer Records </p></li>
-</ul></th>
-<th><strong>3 hours</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>Module 2 - Azure Synapse</strong></p>
-<ul>
-<li><p>Using Synapse to wrangle a set of files </p></li>
-</ul></td>
-<td><strong>2 hours</strong></td>
-</tr>
-<tr class="even">
-<td><p><strong>Module 3 - Azure Machine Learning</strong></p>
-<ul>
-<li><p>Using Azure Machine Learning to find the best predictive model for our business scenario. </p></li>
-</ul></td>
-<td><strong>2 hours</strong></td>
-</tr>
-<tr class="odd">
-<td><strong><a href="#\https://github.com/aslibass/CI-Synapse-AML-HandsOn/blob/main/Module4.md">Module 4 - Putting it all together</a></strong></td>
-<td><strong>2 hours</strong></td>
-</tr>
-<tr class="even">
-<td><ul>
-<li><p>Using CI to navigate, segment, and predict behavior across our final customer dataset.</p></li>
-</ul></td>
-<td></td>
-</tr>
-</tbody>
-</table>
 
-<img src="media0/media/image3.png" style="width:8.49375in;height:0.74167in" />
+| Module | Topic | Duration |
+|--------|--------------------------------|----|
+|[Module 1](./Module1.md) |  Using Dynamics 365 Customer Insights to Cleanse & Enrich a set of Customer Records | 3 hours |
+| [Module 2](./Module2.md) | Using Azure Synapse to wrangle and serve a set of files | 2 hours |
+| [Module 3](./Module3.md) | Using Azure Machine Learning to find the best predictive model for our business scenario. | 2 hours |
+| [Module 4](./Module4.md) | Bringing it all together in Dynamics Customer Insights 365 to navigate, segment and predict individual customer behaviour | 2 hour |
+
+![Footer](./media0/media/image3.png)
