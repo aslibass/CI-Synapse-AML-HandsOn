@@ -44,7 +44,7 @@ In this step you will create a Customer Insights environment, that you will use 
 # Step 2: Ingest Data
 In this step you will bring the data into the CI environment from your Azure Synapse Workspace. 
 1. In the CI environment, navigate to the Data > Data Source
-2. Select `Add Data Summary` and select `Azure data lake storage`, provide `sourcedata` for the data source name and click "Next".
+2. Select `Add Data Source` and select `Azure data lake storage`, provide `sourcedata` for the data source name and click "Next".
 > * **Note**: Make sure you name the data source `sourcedata` as it is used in the Azure Synapse notebooks in later steps.
 
 ![Import Common Data Model](./media1/ImportMethod.png) 
