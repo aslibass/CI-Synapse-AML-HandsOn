@@ -2,7 +2,6 @@
 
 ## Using CI to Cleanse & Enrich a set of Customer Records
 
-`Daniel Xu to complete`
 
 # Dynamics Customer Insights Deployment  
 Please follow the steps below to set up the Customer Insights (CI) environment
@@ -24,12 +23,12 @@ In this step you will create a Customer Insights environment, that you will use 
 
 ![Customer Insights](./media1/CIBusiness.png)
 
-5. Provide a name for your workspace, select `Production` under "Type", select the region your Azure resources are deployed under "Region" 
+5. Provide a name for your workspace, select `Production` under "Type", select the region your Azure resources are deployed under "Region", then click "Next" 
 
 ![Create Environment](./media1/CreateEnvironment.png) 
 
-6. In the Advance Settings, select `Azure Data Lake Storage Gen 2` under "Save output to" 
-7. Select `Azure subscription` under "Connect your storage account using" and click "Next" 
+6. In the Data storage tab, select `Azure Data Lake Storage Gen 2` under "Save output data to" 
+7. Select `Azure subscription` under "Connect your storage using" 
    > * choose your Subscription, Resource Group, Storage Account (you will see two storage accounts in the dropdown, be sure to select the Synapse Workspace Storage account and **not** the machine learning storage account)
 
 ![Storage Account for CI](./media1/CIEnvironmentSetUp.png)
@@ -43,11 +42,11 @@ In this step you will create a Customer Insights environment, that you will use 
 
 # Step 2: Ingest Data
 In this step you will bring the data into the CI environment from your Azure Synapse Workspace. 
-1. In the CI environment, navigate to the Data > Data Source
+1. In the CI environment, navigate to the Data tab > Data Sources
 2. Select `Add Data Source` and select `Azure data lake storage`, provide `sourcedata` for the data source name and click "Next".
 > * **Note**: Make sure you name the data source `sourcedata` as it is used in the Azure Synapse notebooks in later steps.
 
-![Import Common Data Model](./media1/ImportMethod.png) 
+![Import Common Data Model](./media1/import.png) 
 
 3. Under "Connect your storage account using" select `Azure subscription`, select your `subscription`, `resource group` and the `Synapse workspace storage account` you are using for this solution. Enter `data` for the Container
 
@@ -57,14 +56,9 @@ In this step you will bring the data into the CI environment from your Azure Syn
 
 ![Model Folder](./media1/CommonDataModelFolder.png)
 
-5. Select all model entities and click "Next"
+5. Select all entities to include then select "Save"
 
-![Model Entity](./media1/SourceEntity.png)
-
-6. Select all entities to enable data profiling and select "Save"
-
-![Data Profiling](./media1/DataProfilingSource.png)
-
+![Model Entity](./media1/includeall.png)
 
 
 # Step 3: Unify Data
@@ -81,7 +75,7 @@ Mapping happens against default CI field types (e.g. ID, Person.Age, Location.Ci
 
 2. Select `residents_source1`, set "cid" to `Person`, set the primary key to `cid`
 
-![Unify Map](./media1/UnifyMapResident.png)
+![Unify Map](./media1/UnifyMap.png)
 
 > * **Note**: Repeat the steps above for each source dataset below
 
@@ -104,7 +98,7 @@ Mapping happens against default CI field types (e.g. ID, Person.Age, Location.Ci
 <!---
 ![Unify Map](./media1/UnifyMapWorkorder.png)
 --->
-8. Click "Save
+8. Click "Save"
 
 ## Step 3.2: Match
 Match records between entities based on matching IDs. 
@@ -302,7 +296,7 @@ In this step you will create Measures for Leases Ending in 90 Days, Life Time Va
 
 ![Measures Leases](./media1/MeasureDimensions.png)
 
-10. Select "Relationship", select `sourcedata_leases > sourcedata_residents_source1 > Customer` and select "Done"
+10. Select "Relationship path", select `sourcedata_leases > sourcedata_residents_source1 > Customer` and select "Done"
 
 ![Measures Leases](./media1/MeasureRelationshipPath.png)
 
@@ -328,7 +322,7 @@ Repeat the steps from 6.1 for Source 2
 
 ![Measures Leases](./media1/MeasureDimensions.png)
 
-10. Select "Relationship", select `sourcedata_leases > sourcedata_residents_source2 > Customer` and select "Done"
+10. Select "Relationship path", select `sourcedata_leases > sourcedata_residents_source2 > Customer` and select "Done"
 11. Select "Run" 
 
 ## Step 6.3: Lease Ending in 90 Days 
@@ -345,7 +339,7 @@ Repeat the steps from 6.1 and 6.2 to combine the two measures
 
 ![Measures Leases](./media1/MeasureAddAttributeMeasure.png)
 
-7. Select "+", select "Add atributes", select "Measures", select `LeasesEndingin90DaysSource2.LeasesEndingin90DaysSource2` from the measures list and click "Add" 
+7. Select the "+" operator, select "Add atributes", select "Measures", select `LeasesEndingin90DaysSource2.LeasesEndingin90DaysSource2` from the measures list and click "Add" 
 
 ![Measures Leases](./media1/MeasureLeaseEndingIn90DaysCalculation.png)
 
@@ -404,7 +398,7 @@ Repeat the steps from 6.1 and 6.2 to combine the two measures
 
 ![Measures Leases](./media1/MeasureDimensions.png)
 
-9. Select "Relationship", select `sourcedata_workorders > sourcedata_residents_source1 > Customer` and select "Done"
+9. Select "Relationship path", select `sourcedata_workorders > sourcedata_residents_source1 > Customer` and select "Done"
 10. Select "Run" 
 
 ## Step 6.6: Number of Air Conditioning Work Orders Source 2
@@ -426,7 +420,7 @@ Repeat the steps from 6.5 for Source 2
 
 ![Measures Leases](./media1/MeasureDimensions.png)
 
-9. Select "Relationship", select `sourcedata_workorders > sourcedata_residents_source2 > Customer` and select "Done"
+9. Select "Relationship path", select `sourcedata_workorders > sourcedata_residents_source2 > Customer` and select "Done"
 10. Select "Run" 
 
 ## Step 6.7: Number of Air Conditioning Work Orders 
@@ -440,7 +434,7 @@ Repeat the steps from 6.5 and 6.6 to combine the two measures
 4. Select "Edit name" under the Calculation, provide `Number of Air Conditioning Work Orders` for the calculation name and click "Done" 
 5. Select Sum from the drop down 
 6. Select "+ Add attribute", select "Measures", select `NumberofAirConditioningWorkOrdersSource1.NumberofAirConditioningWorkOrdersSource1` from the measures list and click "Add" 
-7. Select "+", select "+ Add attribute", select "Measures", select `NumberofAirConditioningWorkOrdersSource2.NumberofAirConditioningWorkOrdersSource2` from the measures list and click "Add" 
+7. Select the "+" operator, select "+ Add attribute", select "Measures", select `NumberofAirConditioningWorkOrdersSource2.NumberofAirConditioningWorkOrdersSource2` from the measures list and click "Add" 
 
 ![Measures](./media1/MeasureAddAttributeMeasure.png)
 
@@ -469,13 +463,13 @@ Repeat the steps from 6.5 and 6.6 to combine the two measures
 ![Segment Leases Ending in 90 Days with Air Conditioning WO Name](./media1/SegmentName.png)
 
 2. Select the `LeasesEndingin90Days.LeasesEndingin90Days` measure from the Attributes list, select "greater than or equal to" from the dropdown and enter "1" under Enter Value
-3. Select the dropdown and select "Intersect" 
-3. Select "+ Add rule", select the `NumberofAirConditioningWorkOrders.NumberofAirConditioningWorkOrders` measure from the Attributes list, select "greater than or equal to" from the dropdown and enter "1" under Enter Value, and select "Save"
+3. Select "+ Add rule", select the dropdown in the middle and select "Intersect" 
+3. Select the `NumberofAirConditioningWorkOrders.NumberofAirConditioningWorkOrders` measure from the Attributes list, select "greater than or equal to" from the dropdown and enter "1" under Enter Value, and select "Save"
 
 ![SegmentLeaseEnding90DayswithAirConditioningWO](./media1/SegmentLeaseEnding90DayswithAirConditioningWO.png)
 
 ## Step 7.2: Residents Lease Ending in 90 Days 
-Follow steps 1-3 above and click "Save" 
+1. Click "+ New", select "Build your own", then follow steps 2 and 3 above and click "Save" 
 
 ![SegmentLeaseEnding90Days](./media1/SegmentLeaseEnding90Days.png)
 
@@ -643,7 +637,7 @@ In this step you will bring the Lease Renewal Preductions data into the CI envir
 6. Click "Save and close" 
 7. Select Edit on the "Lease Renewal Predictions"  
 8. Select "Dimensions", select `CustomerInsights.CustomerId` and select "Apply"  
-9. Select "Relationship", select `predictions_lease_renewal > Customer` and select "Done"
+9. Select "Relationship path", select `predictions_lease_renewal > Customer` and select "Done"
 10. Select "Run" 
 
 # Step 11: Power BI Set Up 
