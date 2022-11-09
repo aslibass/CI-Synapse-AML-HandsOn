@@ -2,6 +2,9 @@ Nw# Module 3
 
 ## Azure Machine Learning
 
+### Pre-requisites.
+This only needs to be done once in an enviroment. Please [Create a linked service using the Synapse workspace Managed Identity](https://learn.microsoft.com/en-us/azure/synapse-analytics/machine-learning/quickstart-integrate-azure-machine-learning#create-a-linked-service-using-the-synapse-workspace-managed-identity)
+
 ### Using Azure Machine Learning to find the best predictive model for our business scenario
 
 Now that we have created our training and testing datasets, lets use Azure Machine Learning from within Synapse to figure out the best model for our purposes. 
