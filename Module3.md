@@ -5,6 +5,12 @@ Nw# Module 3
 ### Pre-requisites.
 This only needs to be done once in an enviroment. Please [Create a linked service using the Synapse workspace Managed Identity](https://learn.microsoft.com/en-us/azure/synapse-analytics/machine-learning/quickstart-integrate-azure-machine-learning#create-a-linked-service-using-the-synapse-workspace-managed-identity)
 
+You will need to 
+1. [Give MSI permission to the Azure ML Workspace](https://learn.microsoft.com/en-us/azure/synapse-analytics/machine-learning/quickstart-integrate-azure-machine-learning#give-msi-permission-to-the-azure-ml-workspace)
+2. [Create an Azure ML linked Service](https://learn.microsoft.com/en-us/azure/synapse-analytics/machine-learning/quickstart-integrate-azure-machine-learning#create-an-azure-ml-linked-service)
+
+This will allow the Synapse Workspace to run ML experiments in the Azure Machine Learning workspace using the steps below. 
+
 ### Using Azure Machine Learning to find the best predictive model for our business scenario
 
 Now that we have created our training and testing datasets, lets use Azure Machine Learning from within Synapse to figure out the best model for our purposes. 
